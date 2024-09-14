@@ -1,10 +1,10 @@
 # Documento de Formulación del Proyecto
 
-Helver Garcia Herrera & Cristhian David Velasquez
-Facultad de Ingeniería Universidad Iberoamericana
-Proyecto de software
-Jaime Arévalo
-10 de septiembre de 2024
+> Helver Garcia Herrera & Cristhian David Velasquez
+> Facultad de Ingeniería Universidad Iberoamericana
+> Proyecto de software
+> Jaime Arévalo
+> 10 de septiembre de 2024
 
 
 ## Descripción del Problema 
