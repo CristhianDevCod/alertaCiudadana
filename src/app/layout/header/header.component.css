@@ -1,0 +1,14 @@
+ul li > a {
+	background-color: #f2cfaa;
+	border-radius: 15px;
+	transition: all .5s ease;
+}
+
+ul li > a:hover {
+	background-color: #f73939;
+	scale: 1.2;
+}
+
+ul li {
+	margin: 0 2rem;
+}
