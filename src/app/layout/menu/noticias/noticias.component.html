@@ -1,1 +1,10 @@
-<p>noticias works!</p>
+<div *ngFor="let noticia of noticiasArr">
+    <app-noticia 
+        [nombreAutor]="noticia.autor"
+        [imagenNoticia]="noticia.imagen"
+        [tituloNoticia]="noticia.titulo"
+        [numMeGusta]="noticia.meGusta"
+        [numNoMeGuSTA]="noticia.noMeGusta"
+        [descripcion]="noticia.descripcion"
+    />
+</div>
