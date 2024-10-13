@@ -7,8 +7,7 @@ import { MenuComponent } from "./layout/menu/menu.component";
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, MenuComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'alertaCiudadana';

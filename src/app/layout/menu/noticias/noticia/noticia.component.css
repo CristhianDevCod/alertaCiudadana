@@ -1,0 +1,19 @@
+/* Configurar la posición del autor */
+.card {
+    position: relative;
+}
+
+#autor-container {
+    position: absolute;
+    
+}
+
+/* Configuración del autor */
+#autor{
+    user-select: none;
+}
+
+.star-rating {
+    color: gold;
+    font-size: 2rem;
+}
