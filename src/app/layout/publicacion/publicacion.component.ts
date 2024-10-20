@@ -4,9 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-publicacion',
   standalone: true,
   imports: [],
-  templateUrl: './publicacion.component.html',
-  styleUrl: './publicacion.component.css'
+  templateUrl: './publicacion.component.html'
 })
 export class PublicacionComponent {
-
+  
 }
