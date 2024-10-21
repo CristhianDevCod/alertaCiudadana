@@ -1,0 +1,9 @@
+.campo label {
+    margin-right: 1rem;
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
