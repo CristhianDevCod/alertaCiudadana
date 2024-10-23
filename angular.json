@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "alertaCiudadana": {
+    "alerta-ciudadana": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "alertaCiudadana:build:production"
+              "buildTarget": "alerta-ciudadana:build:production"
             },
             "development": {
-              "buildTarget": "alertaCiudadana:build:development"
+              "buildTarget": "alerta-ciudadana:build:development"
             }
           },
           "defaultConfiguration": "development"

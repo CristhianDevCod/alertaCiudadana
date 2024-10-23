@@ -42,3 +42,8 @@ testem.log
 Thumbs.db
 
 README.md
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
