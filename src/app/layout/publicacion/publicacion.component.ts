@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
     FormControl,
     FormGroup,
@@ -15,6 +15,7 @@ import {
 } from '@angular/fire/storage';
 import { DataServiceService } from '../../api/services/data-service.service';
 import Noticia from '../../api/interface/noticia';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-publicacion',
@@ -26,6 +27,7 @@ import Noticia from '../../api/interface/noticia';
     styleUrl: './publicacion.component.css'
 })
 export class PublicacionComponent {
+    router = inject(Router);
 
     //Arreglo de todas las imagenes
     images: string[];
@@ -65,10 +67,10 @@ export class PublicacionComponent {
         try {
             // Subir la imagen a Firebase Storage
             const response = await uploadBytes(imgRef, imageFile);
-
+            
             // Obtener la URL de la imagen subida
             const imageUrl = await this.getMyImage(ref(this.storage, response.metadata.fullPath));
-
+            
             // Estructurar el objeto de noticia con la URL de la imagen
             const noticia: Noticia = {
                 autor: 'Nombre del autor', // Puedes cambiar esto mas adelante
@@ -78,10 +80,14 @@ export class PublicacionComponent {
                 meGusta: meGusta,
                 noMeGusta: noMeGusta
             };
-
+            
             // Guardar la noticia en Firestore
             const noticiaRef = await this.noticiaService.addNoticia(noticia);
             // console.log('Noticia guardada:', noticiaRef);
+            
+            //Dirigir al usuario a el area de menu
+            this.router.navigateByUrl('/inicio');
+            
 
             // Actualizar el arreglo de imágenes
             this.getImages();

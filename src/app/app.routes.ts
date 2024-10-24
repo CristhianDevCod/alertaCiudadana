@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { MenuComponent } from './layout/menu/menu.component';
 import { LoginComponent } from './layout/login/login.component';
 import { PublicacionComponent } from './layout/publicacion/publicacion.component';
+import { UnknownComponent } from './layout/unknown/unknown.component';
 
 export const routes: Routes = [
     {
@@ -19,5 +20,9 @@ export const routes: Routes = [
     {
         path: "login",
         component: LoginComponent
+    },
+    {
+        path: "**",
+        component: UnknownComponent
     }
 ];
