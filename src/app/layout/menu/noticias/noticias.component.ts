@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NoticiaModel } from '../../../api/model/noticia.model';
 import { NoticiaComponent } from "./noticia/noticia.component";
 import { NgFor } from '@angular/common';
+import Noticia from '../../../api/interface/noticia';
 
 @Component({
   selector: 'app-noticias',
@@ -10,27 +10,21 @@ import { NgFor } from '@angular/common';
   templateUrl: './noticias.component.html'
 })
 export class NoticiasComponent {
-  noticiasArr: NoticiaModel[] = [
-    new NoticiaModel(
-      'Juan Perez', 
-      'images/corte de agua.jpg',
-      'titulo de prueba', 
-      10, 
-      2, 
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, omnis.'),
-    new NoticiaModel(
-        'juan serrano', 
-        'images/corte de agua.jpg',
-        'titulo de prueba', 
-        10, 
-        2, 
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, omnis.'),
-    new NoticiaModel(
-          'pedro escanoso', 
-          'images/corte de agua.jpg',
-          'titulo de prueba', 
-          10, 
-          2, 
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, omnis.'),
-  ];
+  
+  noticias: Noticia[];
+
+
+  constructor(
+
+  ){
+    this.noticias = [{
+      id: '0',
+      autor: 'Patricia teran',
+      titulo: 'Noticia de prueba',
+      descripcion: 'Este es el cuerpo de una noticia muy grande',
+      imagenURL: '/images/corte de agua.jpg',
+      meGusta: [],
+      noMeGusta: []
+    }];
+  }
 }

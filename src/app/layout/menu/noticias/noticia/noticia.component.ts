@@ -13,8 +13,8 @@ export class NoticiaComponent {
   @Input() nombreAutor:string = "";
   @Input() imagenNoticia: string = "";
   @Input() tituloNoticia: string = "";
-  @Input() numMeGusta: number = 0;
-  @Input() numNoMeGuSTA: number = 0;
+  @Input() numMeGusta: string[] = [];
+  @Input() numNoMeGuSTA: string[] = [];
   @Input() descripcion: string = "";
   
   // funciones

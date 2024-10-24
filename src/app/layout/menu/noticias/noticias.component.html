@@ -1,7 +1,7 @@
-<div *ngFor="let noticia of noticiasArr">
+<div *ngFor="let noticia of noticias">
     <app-noticia 
         [nombreAutor]="noticia.autor"
-        [imagenNoticia]="noticia.imagen"
+        [imagenNoticia]="noticia.imagenURL"
         [tituloNoticia]="noticia.titulo"
         [numMeGusta]="noticia.meGusta"
         [numNoMeGuSTA]="noticia.noMeGusta"
