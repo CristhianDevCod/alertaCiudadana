@@ -81,7 +81,7 @@ export class PublicacionComponent {
 
             // Guardar la noticia en Firestore
             const noticiaRef = await this.noticiaService.addNoticia(noticia);
-            console.log('Noticia guardada:', noticiaRef);
+            // console.log('Noticia guardada:', noticiaRef);
 
             // Actualizar el arreglo de imágenes
             this.getImages();
