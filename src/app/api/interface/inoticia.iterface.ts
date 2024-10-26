@@ -1,5 +1,5 @@
-export default interface Noticia {
-    id?:string,
+export interface INoticiaIterface {
+    id:string,
     autor:string,
     titulo:string,
     descripcion:string,

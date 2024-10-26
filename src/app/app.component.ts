@@ -10,5 +10,4 @@ import { MenuComponent } from "./layout/menu/menu.component";
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'alerta-ciudadana';
 }

@@ -1,5 +1,6 @@
 <div *ngFor="let noticia of noticias">
     <app-noticia 
+        [id]="noticia.id"
         [nombreAutor]="noticia.autor"
         [imagenNoticia]="noticia.imagenURL"
         [tituloNoticia]="noticia.titulo"

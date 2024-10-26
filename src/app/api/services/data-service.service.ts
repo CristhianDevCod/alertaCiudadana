@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
-import Noticia from '../interface/noticia';
+import { 
+  Firestore, 
+  collection, 
+  addDoc, 
+  collectionData 
+} from '@angular/fire/firestore';
+import { INoticiaIterface } from '../interface/inoticia.iterface';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,7 +18,7 @@ export class DataServiceService {
 
   // Los servicios sirven para crear estos metodos y utilizarlos desde cualquier otro componente
 
-  addNoticia(noticia: Noticia){
+  addNoticia(noticia: INoticiaIterface){
     // Esto recibira los datos del formulario de la nueva noticia
     const noticiaRef = collection(this.firestore, 'noticias');
     return addDoc(noticiaRef, noticia);
@@ -23,10 +28,10 @@ export class DataServiceService {
   // devuelve un observable, para que sea sencillo a la hora de recuperar información 
   // a un observable se puede suscribir, por lo tanto se puede estar atento continuamente para saber que esta pasando sobre
   // el observable
-  getNoticias():Observable<Noticia[]>{
+  getNoticias():Observable<INoticiaIterface[]>{
     const noticiaRef = collection(this.firestore, 'noticias');
     // Se emplea este método, retornara los datos de una coleccion 
-    return collectionData(noticiaRef, { idFiel: 'id' }) as Observable<Noticia[]>
+    return collectionData(noticiaRef, { idFiel: 'id' }) as Observable<INoticiaIterface[]>
   }
 }
 

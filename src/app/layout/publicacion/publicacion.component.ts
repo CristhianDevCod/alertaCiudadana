@@ -14,7 +14,7 @@ import {
     StorageReference
 } from '@angular/fire/storage';
 import { DataServiceService } from '../../api/services/data-service.service';
-import Noticia from '../../api/interface/noticia';
+import { INoticiaIterface } from '../../api/interface/inoticia.iterface';
 import { Router } from '@angular/router';
 
 @Component({
@@ -55,6 +55,7 @@ export class PublicacionComponent {
     // Método para manejar el formulario
     async onSubmit(event: any) {
         // Obtener los valores del formulario
+        const id = Date.now().toString();
         const newTitle = event.target[0].value;
         const describe = event.target[1].value;
         const imageFile = event.target[2].files[0];
@@ -72,7 +73,8 @@ export class PublicacionComponent {
             const imageUrl = await this.getMyImage(ref(this.storage, response.metadata.fullPath));
             
             // Estructurar el objeto de noticia con la URL de la imagen
-            const noticia: Noticia = {
+            const noticia: INoticiaIterface = {
+                id: id,
                 autor: 'Nombre del autor', // Puedes cambiar esto mas adelante
                 titulo: newTitle,
                 descripcion: describe,
@@ -86,7 +88,7 @@ export class PublicacionComponent {
             // console.log('Noticia guardada:', noticiaRef);
             
             //Dirigir al usuario a el area de menu
-            this.router.navigateByUrl('/inicio');
+            this.router.navigateByUrl('');
             
 
             // Actualizar el arreglo de imágenes
