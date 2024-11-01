@@ -1,22 +1,25 @@
 <div>
-    <form class="d-flex flex-column justify-content-center text-center gap-4" [formGroup]="noticiaForm"
+    <form class="container-sm" [formGroup]="noticiaForm"
         (ngSubmit)="onSubmit($event)">
-        <div class="campo">
-            <label for="titulo" class="form-label">Titulo de la noticia</label>
-            <input type="text" id="titulo" name="titulo" class="form-control" placeholder="Escribe el titulo"
-                formControlName="titulo" aria-describedby="titulo de la noticia">
-        </div>
-        <div class="campo">
-            <label for="descripcion">Descripción de la noticia</label>
-            <textarea name="descripcion" id="descripcion" placeholder="Descripción de la noticia"
-                formControlName="descripcion"></textarea>
-        </div>
-        <div class="campo">
-            <label for="imagen">Imagen</label>
-            <input type="file" id="imagen" name="imagen" formControlName="imagen" accept="imagen/*">
-        </div>
-        <div class="campo">
-            <button class="btn btn-success" [disabled]="!noticiaForm.valid">Publicar Noticia</button>
+        <div class="row">
+            <div class="col mx-md-5 d-flex flex-column justify-content-center text-center gap-4">
+                <div class="form-floating">
+                    <input type="text" id="titulo" name="titulo" class="form-control" placeholder="Escribe el titulo" formControlName="titulo" aria-describedby="titulo de la noticia">
+                    <label for="titulo" class="form-label">Titulo de la noticia</label>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Descripción de la noticia"
+                        formControlName="descripcion" style="height: 100px;" ></textarea>
+                    <label for="descripcion">Descripción de la noticia</label>
+                </div>
+                <div class="campo container input-group">
+                    <label for="imagen" class="input-group-text">Imagen</label>
+                    <input type="file" class="form-control" id="imagen" name="imagen" formControlName="imagen" accept="imagen/*">
+                </div>
+                <div class="campo container">
+                    <button class="btn btn-success" [disabled]="!noticiaForm.valid">Publicar Noticia</button>
+                </div>
+            </div>
         </div>
     </form>
 </div>
