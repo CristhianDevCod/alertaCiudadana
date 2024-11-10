@@ -121,7 +121,7 @@ export class PublicacionComponent {
                     const url = await getDownloadURL(image);
                     this.images.push(url);
                 }
-                console.log(this.images);
+                // console.log(this.images);
             })
             .catch(error => console.log(error));
     }

@@ -22,7 +22,7 @@ export class NoticiasComponent implements OnInit {
   // se puede suscribir al observable para recibir los direferentes cambios
   ngOnInit(): void {
     this.dataService.getNoticias().subscribe(noticias => {
-      console.log(noticias)
+      // console.log(noticias)
       this.noticias = noticias;
     })
   }
