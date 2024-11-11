@@ -1,2 +1,5 @@
-<h1>búsqueda</h1>
-<p>{{searchQuery}}</p>
+<div *ngIf="sinResultados" class="alert alert-warning">
+    La busqueda no dio resultado
+</div>
+
+<app-noticias class="d-flex gap-3 flex-wrap" *ngIf="!sinResultados" [noticias]="noticiasFiltradas"></app-noticias>
