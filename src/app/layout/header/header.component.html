@@ -1,29 +1,81 @@
 <nav class="navbar navbar-expand-lg">
-	<div class="container-fluid">
-		<a href="" class="navbar-brand">
-			<img [src]="logo" alt="logo de la aplicación" width="200px">
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center gap-2">
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" [routerLink]="['']">Inicio</a>
-				</li>
-				<li class="nav-item">
-					<form class="d-flex" role="search" (submit)="iniciarBusqueda()">
-						<input type="text" class="form-control me-2" [(ngModel)]="searchQuery" placeholder="Buscar noticia" aria-label="Search" name="search">
-						<button class="btn btn-success" type="submit">Buscar</button>
-					  </form>					  
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" [routerLink]="['/publicar']">Publicar noticia</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" [routerLink]="['/login']">Login</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <div class="container-fluid">
+        <a href="" class="navbar-brand">
+            <img [src]="logo" alt="logo de la aplicación" width="200px" />
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center gap-2">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['']"
+                        >Inicio</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <form
+                        class="d-flex gap-2"
+                        role="search"
+                        (submit)="iniciarBusqueda()"
+                    >
+                        <div class="input-group has-validation">
+                            <input
+                                type="text"
+                                class="form-control me-2"
+								[ngClass]="{
+									'is-valid': isValid,
+									'is-invalid': !isValid
+									}"
+                                [(ngModel)]="searchQuery"
+                                placeholder="Buscar noticia"
+                                aria-label="Search"
+                                name="search"
+                                id="campoBusqueda"
+                                required
+                                (keyup)="validarCampo()"
+                                aria-describedby="invalidFeedback"
+                            />
+                            <div class="valid-feedback text-start">
+                                Luce bien
+                            </div>
+							<div class="invalid-feedback text-start" id="invalidFeedback">
+								Escribe algo para buscar
+							</div>
+                        </div>
+                        <button
+                            class="btn btn-success align-self-start"
+                            type="submit"
+                        >
+                            Buscar
+                        </button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        aria-current="page"
+                        [routerLink]="['/publicar']"
+                        >Publicar noticia</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        aria-current="page"
+                        [routerLink]="['/login']"
+                        >Login</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>

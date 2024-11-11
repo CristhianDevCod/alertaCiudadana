@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule para usar [(ngModel)]
+import { FormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, FormsModule], // Agrega FormsModule aquí
+  imports: [
+    RouterLink, 
+    FormsModule,
+    NgClass
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
@@ -16,12 +21,22 @@ export class HeaderComponent {
 
   logo = "/images/logo.png";
   searchQuery: string = '';
+  isValid:boolean = false;
 
   //Función de búsqueda
   iniciarBusqueda() {
-    if (this.searchQuery) {
+    if (this.isValid) {
       this.router.navigate(["/busqueda", this.searchQuery]);
-      console.log("Success");
+      return;
+    }
+    this.searchQuery = '';
+  }
+
+  validarCampo() {
+    if(this.searchQuery.trim() == ''){
+      this.isValid = false;
+    } else {
+      this.isValid = true;
     }
   }
 }
