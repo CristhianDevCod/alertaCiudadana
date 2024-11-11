@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataServiceService } from '../../api/services/data-service.service';
 import { INoticiaIterface } from '../../api/interface/inoticia.iterface';
 import { NgIf } from '@angular/common';
-import { NoticiasComponent } from "../menu/noticias/noticias.component";
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-busqueda',
   standalone: true,
-  imports: [NgIf, NoticiasComponent],
+  imports: [NgIf, NgFor],
   templateUrl: './busqueda.component.html',
   styles: ``
 })
@@ -20,7 +20,8 @@ export class BusquedaComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataServiceService 
+    private dataService: DataServiceService,
+    private routes: Router 
   ){}
 
   ngOnInit(): void{
@@ -47,5 +48,30 @@ export class BusquedaComponent implements OnInit {
     } else {
       this.sinResultados = false;
     }
+  }
+
+  //------------------------------------------------
+  //Lo que se recibe del arreglo noticias:
+  id:string='';
+  nombreAutor:string = "";
+  imagenNoticia: string = "";
+  tituloNoticia: string = "";
+  numMeGusta: string[] = [];
+  numNoMeGuSTA: string[] = [];
+  descripcion: string = "";
+  
+  // funciones
+  limite10(texto:string, max:number, suspen:boolean = false): string{
+    if(suspen){
+      let nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + "...";
+      return nuevoTexto;
+    }
+    let nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + ".";
+
+    return nuevoTexto;
+  }
+
+  verNoticia(id:string){
+    this.routes.navigate(['/detalles',id])
   }
 }

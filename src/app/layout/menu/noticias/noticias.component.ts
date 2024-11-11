@@ -11,7 +11,7 @@ import { DataServiceService } from '../../../api/services/data-service.service';
   templateUrl: './noticias.component.html'
 })
 export class NoticiasComponent implements OnInit {
-  @Input() noticias: INoticiaIterface[] = [];
+  noticias: INoticiaIterface[] = [];
 
   // Se llama siempre que se utilizan servicios de angular
   constructor(
