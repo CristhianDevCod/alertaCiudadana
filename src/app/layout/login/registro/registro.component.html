@@ -2,20 +2,49 @@
 <form>
     <div>
         <label for="correo" class="form-label">Correo</label>
-        <input type="text" class="form-control is-valid" id="correo" required />
+        <input
+            type="text"
+            [(ngModel)]="email"
+            name="correo"
+            class="form-control"
+            [ngClass]="{
+                'is-valid': isEmailValid(),
+                'is-invalid': !isEmailValid() && emailFocused
+            }"
+            (focus)="emailFocused = true"
+            id="correo"
+            placeholder="Ingresa tu correo eléctronico"
+            required
+        />
         <!-- feedback -->
         <div class="valid-feedback">Correo adecuado</div>
         <div class="invalid-feedback">Correo invalido</div>
     </div>
     <div>
         <label for="contrasena1" class="form-label">Contraseña</label>
-        <input
-            type="text"
-            class="form-control is-invalid"
-            id="contrasena1"
-            aria-describedby="inputGroupPrepend3 validationContrasena1"
-            required
-        />
+        <div class="input-group">
+            <input
+                [type]="passwordVisible ? 'text': 'password'"
+                [(ngModel)]="password"
+                class="form-control"
+                [ngClass]="{
+                    'is-valid': isPasswordValid(),
+                    'is-invalid': !isPasswordValid() && passwordFocused
+                }"
+                (focus)="passwordFocused = true"
+                id="contrasena1"
+                aria-describedby="inputGroupPrepend3 validationContrasena1 togglePassword"
+                name="contrasena1"
+                placeholder="Ingresa tu contraseña"
+                required
+            />
+            <button 
+                class="btn btn-outline-secondary"
+                type="button" (click)="togglePasswordVisibility()"
+            >
+                <i class="bi" [ngClass]="passwordVisible ? 'bi-eye' : 'bi-eye-slash'"></i>
+            </button>
+        </div>
         <!-- feedback -->
         <div id="validationContrasena1" class="valid-feedback">
             Contraseña adecuada
@@ -24,7 +53,7 @@
             Contraseña invalida
         </div>
     </div>
-    <div>
+    <div class="mt-3">
         <button class="btn btn-primary" type="submit">Crear usuario</button>
     </div>
 </form>
