@@ -5,6 +5,7 @@ import { PublicacionComponent } from './layout/publicacion/publicacion.component
 import { UnknownComponent } from './layout/unknown/unknown.component';
 import { DetallesComponent } from './layout/menu/noticias/noticia/detalles/detalles.component';
 import { BusquedaComponent } from './layout/busqueda/busqueda.component';
+import { RegistroComponent } from './layout/login/registro/registro.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     {
         path: "login",
         component: LoginComponent
+    },
+    {
+        path: "registro",
+        component: RegistroComponent
     },
     {
         path: "**",

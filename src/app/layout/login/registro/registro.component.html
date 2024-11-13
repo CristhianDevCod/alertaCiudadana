@@ -1,0 +1,30 @@
+<h2>Registro de usuario</h2>
+<form>
+    <div>
+        <label for="correo" class="form-label">Correo</label>
+        <input type="text" class="form-control is-valid" id="correo" required />
+        <!-- feedback -->
+        <div class="valid-feedback">Correo adecuado</div>
+        <div class="invalid-feedback">Correo invalido</div>
+    </div>
+    <div>
+        <label for="contrasena1" class="form-label">Contraseña</label>
+        <input
+            type="text"
+            class="form-control is-invalid"
+            id="contrasena1"
+            aria-describedby="inputGroupPrepend3 validationContrasena1"
+            required
+        />
+        <!-- feedback -->
+        <div id="validationContrasena1" class="valid-feedback">
+            Contraseña adecuada
+        </div>
+        <div id="validationContrasena1" class="invalid-feedback">
+            Contraseña invalida
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit">Crear usuario</button>
+    </div>
+</form>
