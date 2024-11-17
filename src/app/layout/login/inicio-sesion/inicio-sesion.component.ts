@@ -20,7 +20,7 @@ export class InicioSesionComponent {
   // Atributos
   loginForm:FormGroup;
   router = inject(Router);
-
+  
   constructor(
     private userService:UserService
   ){
@@ -33,10 +33,20 @@ export class InicioSesionComponent {
   onSubmit(){
     // console.log(this.loginForm.value)
     this.userService.login(this.loginForm.value)
-      .then( response => {
-        console.log(response)
+    .then( response => {
+      console.log(response)
+      this.router.navigateByUrl('');
+    })
+    .catch(error => console.log(error))
+  }
+  
+  signInGoogle() {
+    this.userService.loginWithGoogle()
+      .then(response => {
+        console.log(response);
         this.router.navigateByUrl('');
       })
       .catch(error => console.log(error))
   }
+
 }

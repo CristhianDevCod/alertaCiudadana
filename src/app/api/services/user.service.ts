@@ -3,7 +3,9 @@ import {
   Auth, 
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
+  signInWithPopup,
+  GoogleAuthProvider
 } from '@angular/fire/auth';
 //Este servicio permitirá realizar todas las conecciónes y empezar a integrarlo dentro de la aplicación.
 
@@ -22,6 +24,10 @@ export class UserService {
 
   login({email, password}: any){
     return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  loginWithGoogle(){
+    return signInWithPopup(this.auth, new GoogleAuthProvider())
   }
 
   logout(){
