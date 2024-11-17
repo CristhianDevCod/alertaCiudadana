@@ -1,0 +1,37 @@
+<form [formGroup]="loginForm" (submit)="onSubmit()">
+    <div>
+        <label for="correo" class="form-label">Correo</label>
+        <input
+            type="text"
+            name="correo"
+            class="form-control"         
+            id="correo"
+            placeholder="Ingresa tu correo eléctronico"
+            formControlName="email"
+        />
+    </div>
+    <div>
+        <label for="contrasena1" class="form-label">Contraseña</label>
+        <div class="input-group">
+            <input
+                type="password"
+                class="form-control"
+                id="contrasena1"
+                aria-describedby="togglePassword"
+                name="contrasena1"
+                placeholder="Ingresa tu contraseña"
+                formControlName="password"
+            />
+        </div>
+    </div>
+    <div class="d-flex my-4 justify-content-evenly aling-items-evenly gap-md-5">
+        <button 
+            class="btn btn-success" 
+            type="submit"
+        >Inicio de sesión</button>
+        <button class="btn btn-primary" [routerLink]="['/registro']">
+            Volver a registro
+        </button>
+    </div>
+</form>
+

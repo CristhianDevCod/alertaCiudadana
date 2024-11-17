@@ -6,6 +6,9 @@ import { UnknownComponent } from './layout/unknown/unknown.component';
 import { DetallesComponent } from './layout/menu/noticias/noticia/detalles/detalles.component';
 import { BusquedaComponent } from './layout/busqueda/busqueda.component';
 import { RegistroComponent } from './layout/login/registro/registro.component';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard'; // Verificar que se importe correctamente
+import { ProfileComponent } from './layout/profile/profile.component';
+import { authenticatedGuard } from './guards/authenticated.guard';
 
 export const routes: Routes = [
     {
@@ -18,7 +21,8 @@ export const routes: Routes = [
     },
     {
         path: "publicar",
-        component: PublicacionComponent
+        component: PublicacionComponent,
+        ...canActivate(()=> redirectUnauthorizedTo(['/login']))
     },
     {
         path: "busqueda/:query",
@@ -30,7 +34,12 @@ export const routes: Routes = [
     },
     {
         path: "registro",
-        component: RegistroComponent
+        component: RegistroComponent,
+        canActivate: [authenticatedGuard]
+    },
+    {
+        path: "profile",
+        component: ProfileComponent
     },
     {
         path: "**",

@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { 
+  Auth, 
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut
+} from '@angular/fire/auth';
 //Este servicio permitirá realizar todas las conecciónes y empezar a integrarlo dentro de la aplicación.
 
 
@@ -11,7 +16,15 @@ export class UserService {
   // Se inyecta el servicio, para poder utilzarlo
   constructor(private auth: Auth) { }
 
-  register({email, passwor}: any) {
-    return createUserWithEmailAndPassword(this.auth, email, passwor);
+  register(email:string, password:string) {
+    return createUserWithEmailAndPassword(this.auth, email, password);
+  }
+
+  login({email, password}: any){
+    return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  logout(){
+    return signOut(this.auth);
   }
 }
