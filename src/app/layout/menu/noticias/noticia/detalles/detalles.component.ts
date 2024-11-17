@@ -1,15 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataServiceService } from '../../../../../api/services/data-service.service';
 import { INoticiaIterface } from '../../../../../api/interface/inoticia.iterface';
 import { Observable } from 'rxjs';
 import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-detalles',
   standalone: true,
-  imports: [NgIf],
+  imports: [
+    NgIf,
+    RouterLink
+  ],
   templateUrl: './detalles.component.html',
   styleUrl: './detalles.component.css'
 })
