@@ -13,10 +13,10 @@ import { NgFor } from '@angular/common';
   styles: ``
 })
 export class BusquedaComponent implements OnInit {
-  searchQuery: string = '';
+  searchQuery = '';
   noticias: INoticiaIterface[] = [];
   noticiasFiltradas: INoticiaIterface[] = [];
-  sinResultados:boolean = false;
+  sinResultados = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -52,21 +52,21 @@ export class BusquedaComponent implements OnInit {
 
   //------------------------------------------------
   //Lo que se recibe del arreglo noticias:
-  id:string='';
-  nombreAutor:string = "";
-  imagenNoticia: string = "";
-  tituloNoticia: string = "";
+  id='';
+  nombreAutor = "";
+  imagenNoticia = "";
+  tituloNoticia = "";
   numMeGusta: string[] = [];
   numNoMeGuSTA: string[] = [];
-  descripcion: string = "";
+  descripcion = "";
   
   // funciones
-  limite10(texto:string, max:number, suspen:boolean = false): string{
+  limite10(texto:string, max:number, suspen = false): string{
     if(suspen){
-      let nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + "...";
+      const nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + "...";
       return nuevoTexto;
     }
-    let nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + ".";
+    const nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + ".";
 
     return nuevoTexto;
   }

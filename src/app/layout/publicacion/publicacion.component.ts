@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
     FormControl,
     FormGroup,
@@ -26,7 +26,7 @@ import { Router } from '@angular/router';
     templateUrl: './publicacion.component.html',
     styleUrl: './publicacion.component.css'
 })
-export class PublicacionComponent {
+export class PublicacionComponent implements OnInit {
     router = inject(Router);
 
     //Arreglo de todas las imagenes
@@ -117,7 +117,7 @@ export class PublicacionComponent {
         listAll(imagesRef)
             .then(async response => {
                 this.images = [];
-                for (let image of response.items) {
+                for (const image of response.items) {
                     const url = await getDownloadURL(image);
                     this.images.push(url);
                 }

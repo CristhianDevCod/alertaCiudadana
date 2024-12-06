@@ -20,8 +20,8 @@ export class HeaderComponent {
   constructor(private router:Router){}
 
   logo = "/images/logo.png";
-  searchQuery: string = '';
-  isValid:boolean = false;
+  searchQuery = '';
+  isValid = false;
 
   //Función de búsqueda
   iniciarBusqueda() {

@@ -40,10 +40,10 @@ export class RegistroComponent {
       Validators.minLength(8)
     ])
   });
-  passwordVisible: boolean = false; 
-  emailFocused: boolean = false;
-  passwordFocused: boolean = false;
-  usuarioCreado:boolean = false;
+  passwordVisible = false; 
+  emailFocused = false;
+  passwordFocused = false;
+  usuarioCreado = false;
 
   // metodos
   onSubmit() {

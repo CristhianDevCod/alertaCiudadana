@@ -12,23 +12,23 @@ import { NgIf } from '@angular/common';
 })
 export class NoticiaComponent {
   //Lo que se recibe del arreglo noticias:
-  @Input() id:string='';
-  @Input() nombreAutor:string = "";
-  @Input() imagenNoticia: string = "";
-  @Input() tituloNoticia: string = "";
+  @Input() id='';
+  @Input() nombreAutor = "";
+  @Input() imagenNoticia = "";
+  @Input() tituloNoticia = "";
   @Input() numMeGusta: string[] = [];
   @Input() numNoMeGuSTA: string[] = [];
-  @Input() descripcion: string = "";
+  @Input() descripcion = "";
 
   constructor(private router:Router){}
   
   // funciones
-  limite10(texto:string, max:number, suspen:boolean = false): string{
+  limite10(texto:string, max:number, suspen = false): string{
     if(suspen){
-      let nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + "...";
+      const nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + "...";
       return nuevoTexto;
     }
-    let nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + ".";
+    const nuevoTexto = texto.charAt(0).toLocaleUpperCase() + texto.substring(1, max) + ".";
 
     return nuevoTexto;
   }

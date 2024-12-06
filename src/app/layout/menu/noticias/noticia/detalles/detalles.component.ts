@@ -42,7 +42,7 @@ export class DetallesComponent implements OnInit {
   }
 
   mayuscula(texto:string):string{
-    let textoNuevo = texto.charAt(0).toLocaleUpperCase() + texto.substring(1);
+    const textoNuevo = texto.charAt(0).toLocaleUpperCase() + texto.substring(1);
     return textoNuevo;
   }
 }
