@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DataServiceService } from '../../../../../api/services/data-service.service';
 import { INoticiaIterface } from '../../../../../api/interface/inoticia.iterface';
-import { Observable } from 'rxjs';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -14,8 +13,7 @@ import { RouterLink } from '@angular/router';
     NgIf,
     RouterLink
   ],
-  templateUrl: './detalles.component.html',
-  styleUrl: './detalles.component.css'
+  templateUrl: './detalles.component.html'
 })
 export class DetallesComponent implements OnInit {
   id: string | null = null;

@@ -15,6 +15,11 @@
     <div class="card-body">
         <h5 class="card-title text-primary">{{ limite10(tituloNoticia, 9) }}</h5>
         <p class="card-text">{{ limite10(descripcion, 59, true) }}</p>
-        <a *ngIf="id" class="btn btn-primary" (click)="verNoticia(id)">Ver detalles</a>
+        <a 
+            class="btn btn-primary" 
+            (click)="verNoticia(id)"
+            (keydown)="verNoticia(id, $event)"
+            tabindex="0"
+        >Ver detalles</a>
     </div>
 </div>

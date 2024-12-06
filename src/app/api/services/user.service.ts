@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ILoginCredentialsInterface } from '../interface/ilogin-credentials.interface';
 import { 
   Auth, 
   createUserWithEmailAndPassword,
@@ -22,7 +23,7 @@ export class UserService {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
-  login({email, password}: any){
+  login({email, password}: ILoginCredentialsInterface){
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 

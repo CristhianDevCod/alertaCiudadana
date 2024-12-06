@@ -9,8 +9,7 @@ import { NgFor } from '@angular/common';
   selector: 'app-busqueda',
   standalone: true,
   imports: [NgIf, NgFor],
-  templateUrl: './busqueda.component.html',
-  styles: ``
+  templateUrl: './busqueda.component.html'
 })
 export class BusquedaComponent implements OnInit {
   searchQuery = '';
@@ -71,7 +70,11 @@ export class BusquedaComponent implements OnInit {
     return nuevoTexto;
   }
 
-  verNoticia(id:string){
-    this.routes.navigate(['/detalles',id])
+  verNoticia(id:string, event?: KeyboardEvent):void{
+    if(event && event.key !== 'Enter' && event.key !== ' '){
+      return; // si no se presiona enter o space no se hace nada
+    }
+    // navegar a la página de detalles
+    this.routes.navigate(['/detalles', id])
   }
 }

@@ -33,7 +33,10 @@ export class NoticiaComponent {
     return nuevoTexto;
   }
 
-  verNoticia(id:string){
+  verNoticia(id:string, event?:KeyboardEvent):void{
+    if(event && event.key !== 'Enter' && event.key !== ' '){
+      return;
+    }
     this.router.navigate(['/detalles',id])
   }
 

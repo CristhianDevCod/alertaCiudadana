@@ -23,8 +23,7 @@ import { Router } from '@angular/router';
     imports: [
         ReactiveFormsModule
     ],
-    templateUrl: './publicacion.component.html',
-    styleUrl: './publicacion.component.css'
+    templateUrl: './publicacion.component.html'
 })
 export class PublicacionComponent implements OnInit {
     router = inject(Router);
@@ -53,12 +52,14 @@ export class PublicacionComponent implements OnInit {
     });
 
     // Método para manejar el formulario
-    async onSubmit(event: any) {
+    async onSubmit(event: SubmitEvent) {
         // Obtener los valores del formulario
+        const form = event.target as HTMLFormElement;
+
         const id = Date.now().toString();
-        const newTitle = event.target[0].value;
-        const describe = event.target[1].value;
-        const imageFile = event.target[2].files[0];
+        const newTitle = (form.elements[0] as HTMLInputElement).value;
+        const describe = (form.elements[1] as HTMLTextAreaElement).value;
+        const imageFile = (form.elements[2] as HTMLInputElement).files![0];
         const meGusta: string[] = [];
         const noMeGusta: string[] = [];
 
@@ -84,7 +85,8 @@ export class PublicacionComponent implements OnInit {
             };
             
             // Guardar la noticia en Firestore
-            const noticiaRef = await this.noticiaService.addNoticia(noticia);
+            await this.noticiaService.addNoticia(noticia);
+            // const noticiaRef = await this.noticiaService.addNoticia(noticia);
             // console.log('Noticia guardada:', noticiaRef);
             
             //Dirigir al usuario a el area de menu

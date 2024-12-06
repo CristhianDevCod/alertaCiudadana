@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NoticiaComponent } from "./noticia/noticia.component";
 import { NgFor } from '@angular/common';
 import { INoticiaIterface } from '../../../api/interface/inoticia.iterface';
