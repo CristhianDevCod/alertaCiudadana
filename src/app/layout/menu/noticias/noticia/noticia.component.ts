@@ -1,12 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-noticia',
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   templateUrl: './noticia.component.html',
   styleUrl: "./noticia.component.css"
 })
