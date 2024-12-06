@@ -5,7 +5,7 @@ import {
   addDoc, 
   collectionData 
 } from '@angular/fire/firestore';
-import { INoticiaIterface } from '../interface/inoticia.iterface';
+import { INoticiaIterface } from '../interfaces/inoticia.iterface';
 import { Observable } from 'rxjs';
 
 @Injectable({

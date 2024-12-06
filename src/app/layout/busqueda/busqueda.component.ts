@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataServiceService } from '../../api/services/data-service.service';
-import { INoticiaIterface } from '../../api/interface/inoticia.iterface';
+import { INoticiaIterface } from '../../api/interfaces/inoticia.iterface';
 import { NgIf } from '@angular/common';
 import { NgFor } from '@angular/common';
 

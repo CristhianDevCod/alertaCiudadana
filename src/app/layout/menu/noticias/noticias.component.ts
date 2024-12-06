@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiaComponent } from "./noticia/noticia.component";
 import { NgFor } from '@angular/common';
-import { INoticiaIterface } from '../../../api/interface/inoticia.iterface';
+import { INoticiaIterface } from '../../../api/interfaces/inoticia.iterface';
 import { DataServiceService } from '../../../api/services/data-service.service';
 
 @Component({

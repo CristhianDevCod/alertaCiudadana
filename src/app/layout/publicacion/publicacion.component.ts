@@ -14,7 +14,7 @@ import {
     StorageReference
 } from '@angular/fire/storage';
 import { DataServiceService } from '../../api/services/data-service.service';
-import { INoticiaIterface } from '../../api/interface/inoticia.iterface';
+import { INoticiaIterface } from '../../api/interfaces/inoticia.iterface';
 import { Router } from '@angular/router';
 
 @Component({

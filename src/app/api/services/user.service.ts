@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ILoginCredentialsInterface } from '../interface/ilogin-credentials.interface';
+import { ILoginCredentialsInterface } from '../interfaces/ilogin-credentials.interface';
 import { 
   Auth, 
   createUserWithEmailAndPassword,
