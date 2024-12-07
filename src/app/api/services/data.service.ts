@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DataServiceService {
+export class DataService {
 
   // Se inyecta firestore en el constructor, se pueden inyectar otras herramientas como aut. o history  aqui se importan los servicios de cada una de ellas
   constructor(private firestore:Firestore) { }

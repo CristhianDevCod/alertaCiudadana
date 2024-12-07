@@ -13,7 +13,7 @@ import {
     getDownloadURL,
     StorageReference
 } from '@angular/fire/storage';
-import { DataServiceService } from '../../api/services/data-service.service';
+import { DataService } from '../../api/services/data.service';
 import { INoticiaIterface } from '../../api/interfaces/inoticia.iterface';
 import { Router } from '@angular/router';
 
@@ -35,7 +35,7 @@ export class PublicacionComponent implements OnInit {
     // En el constructor se inyectan los servicios generados en services
     constructor(
         private storage: Storage,
-        private noticiaService: DataServiceService // Servicio para interactuar con firestorage
+        private noticiaService: DataService // Servicio para interactuar con firestorage
     ) {
         this.images = [];
         this.urlImagen = '';

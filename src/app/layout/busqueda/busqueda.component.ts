@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataServiceService } from '../../api/services/data-service.service';
+import { DataService } from '../../api/services/data.service';
 import { INoticiaIterface } from '../../api/interfaces/inoticia.iterface';
 import { NgIf } from '@angular/common';
 import { NgFor } from '@angular/common';
@@ -16,10 +16,11 @@ export class BusquedaComponent implements OnInit {
   noticias: INoticiaIterface[] = [];
   noticiasFiltradas: INoticiaIterface[] = [];
   sinResultados = false;
+  sinResultadosTexto = 'La busqueda no dio resultado';
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataServiceService,
+    private dataService: DataService,
     private routes: Router 
   ){}
 

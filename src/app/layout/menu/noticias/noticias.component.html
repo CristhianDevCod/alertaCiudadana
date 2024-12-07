@@ -1,4 +1,4 @@
-<div *ngFor="let noticia of noticias">
+<div *ngFor="let noticia of noticias; tackBy: trackById">
     <app-noticia 
         [id]="noticia.id"
         [nombreAutor]="noticia.autor"
@@ -9,3 +9,4 @@
         [descripcion]="noticia.descripcion"
     />
 </div>
+

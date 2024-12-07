@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NoticiaComponent } from "./noticia/noticia.component";
 import { NgFor } from '@angular/common';
 import { INoticiaIterface } from '../../../api/interfaces/inoticia.iterface';
-import { DataServiceService } from '../../../api/services/data-service.service';
+import { DataService } from '../../../api/services/data.service';
 
 @Component({
   selector: 'app-noticias',
@@ -15,7 +15,7 @@ export class NoticiasComponent implements OnInit {
 
   // Se llama siempre que se utilizan servicios de angular
   constructor(
-    private dataService: DataServiceService
+    private dataService: DataService
   ){};
 
   // Este método se ejecuta justo cuando se arranca el componente
@@ -27,5 +27,9 @@ export class NoticiasComponent implements OnInit {
         this.noticias = noticias;
       })
     }
+  }
+
+  trackById(index:number, item: INoticiaIterface): string{
+    return item.id; 
   }
 }

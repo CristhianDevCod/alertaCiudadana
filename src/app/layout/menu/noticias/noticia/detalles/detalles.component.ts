@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataServiceService } from '../../../../../api/services/data-service.service';
+import { DataService } from '../../../../../api/services/data.service';
 import { INoticiaIterface } from '../../../../../api/interfaces/inoticia.iterface';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -20,7 +20,7 @@ export class DetallesComponent implements OnInit {
   noticia: INoticiaIterface | undefined;
   noticias: INoticiaIterface[] = [];
 
-  constructor(private route: ActivatedRoute, private dataservice: DataServiceService){}
+  constructor(private route: ActivatedRoute, private dataservice: DataService){}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
