@@ -34,5 +34,3 @@ export class DataService {
     return collectionData(noticiaRef, { idFiel: 'id' }) as Observable<INoticiaIterface[]>
   }
 }
-
-
